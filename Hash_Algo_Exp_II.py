@@ -81,7 +81,7 @@ def createPadBlock(givenList, blockSize):
     for i in range(0, len(givenList), blockSize):
        padDictionary["messageBlock_{0}".format(i)] = (givenList[i:i+blockSize])
 
-# Pad last messageBlock to 4 binary characters
+# Pad last messageBlock to 4 bytes
 def padMessageBlock(giveDictionary):
     blockLength = list(giveDictionary.values())
     for i in blockLength:
