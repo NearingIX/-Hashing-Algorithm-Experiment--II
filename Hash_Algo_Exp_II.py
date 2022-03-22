@@ -3,6 +3,7 @@
 import cmath
 import pprint
 
+savedHash = open('savedHash.txt', 'a')
 # Accept arbitrary message length
 givenMessage = input("What shall we hash today? ")
 preOrdImage = 0
@@ -168,6 +169,10 @@ def reOrderHash():
         finalHash = finalHash[::-1]
     finalHash = ''.join(finalHash)
 
+def recordHash():
+    global savedHash, finalHash
+    savedHash.write(str("\n" + "Hashed Password: " + finalHash))
+
 createAsciiMessage()
 createBinaryHash()
 print("Initial Message Bytes: " + str(len(binaryHash)))
@@ -187,3 +192,5 @@ convertHash()
 reOrderHash()
 print(len(finalHash))
 print(finalHash)
+recordHash()
+savedHash.close()
