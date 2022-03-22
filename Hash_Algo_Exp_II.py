@@ -114,7 +114,8 @@ def mutateHashLayerOne():
         i[2::] = ['{0}{3}{2}{1}{4}{7}{6}{5}'.format(*byteUnit) for byteUnit in i[2::]]
         i[2::3] = ['{0}{4}{2}{3}{5}{6}{7}{1}'.format(*byteUnit) for byteUnit in i[2::3]]
         i[3::4] = ['{0}{3}{2}{1}{7}{5}{6}{4}'.format(*byteUnit) for byteUnit in i[3::4]]
-
+        
+# Mutate Hash: Layer One
 def mutateHashLayerTwo():
     global finalDictionary, messageLength, valueAtFour, valueAtFortyThree
     dictionaryValues = list(finalDictionary.values())
@@ -134,7 +135,7 @@ def mutateHashLayerTwo():
         i[2::3] = ['{0}{1}{2}{3}{4}{5}{6}{7}'.format(*byteUnit) for byteUnit in i[2::3]]
         i[3::4] = ['{0}{3}{2}{3}{4}{5}{1}{7}'.format(*byteUnit) for byteUnit in i[3::4]]
        
-# Convert Hash back to Unicode
+# Convert hash back to unicode
 def convertHash():
     global finalDictionary, finalHash
     finalDictionary = sum(finalDictionary.values(), [])
