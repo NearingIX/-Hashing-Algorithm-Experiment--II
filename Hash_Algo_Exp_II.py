@@ -55,7 +55,6 @@ def createPadValue():
         padValue = 794839138932842334414846966981417223553 ** 8
 
 # Isolate intergers from padValue for later mutations
-
 def isolatePadValues():
     global padValue, valueAtFour, valueAtTwentySeven, valueAtTwentyTwo, valueAtFortyThree
     valueAtFour = str(padValue)
@@ -134,13 +133,15 @@ def mutateHashLayerTwo():
         i[2::] = ['{0}{4}{5}{3}{2}{5}{4}{7}'.format(*byteUnit) for byteUnit in i[2::]]
         i[2::3] = ['{0}{1}{2}{3}{4}{5}{6}{7}'.format(*byteUnit) for byteUnit in i[2::3]]
         i[3::4] = ['{0}{3}{2}{3}{4}{5}{1}{7}'.format(*byteUnit) for byteUnit in i[3::4]]
-
+       
+# Convert Hash back to Unicode
 def convertHash():
     global finalDictionary, finalHash
     finalDictionary = sum(finalDictionary.values(), [])
     for c in finalDictionary:
         finalHash += chr(int(c,2))
 
+# Scramble the hash
 def reOrderHash():
     global finalHash
     finalHash = finalHash[:256]
