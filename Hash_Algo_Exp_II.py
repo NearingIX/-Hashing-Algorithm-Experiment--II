@@ -123,7 +123,7 @@ def mutateHashLayerTwo():
     global finalDictionary, messageLength, valueAtFour, valueAtFortyThree
     dictionaryValues = list(finalDictionary.values())
     for i in dictionaryValues[valueAtFour::7]:
-        i[1::] = ['{0}{5}{4}{3}{1}{2}{6}{7}'.format(*byteUnit) for byteUnit in i[1::]]
+        i[1::] = ['{0}1{4}{3}{1}{2}{6}{7}'.format(*byteUnit) for byteUnit in i[1::]]
         i[2::] = ['{0}{3}{2}{1}{4}{7}{6}{5}'.format(*byteUnit) for byteUnit in i[2::]]
         i[2::3] = ['{0}1{2}{3}{4}{6}{7}{1}'.format(*byteUnit) for byteUnit in i[2::3]]
         i[3::4] = ['{0}{1}{2}{1}{4}{5}{6}{7}'.format(*byteUnit) for byteUnit in i[3::4]]
@@ -131,7 +131,7 @@ def mutateHashLayerTwo():
         i[1::] = ['{0}{2}{4}{3}{1}{5}{6}{1}'.format(*byteUnit) for byteUnit in i[1::]]
         i[2::] = ['{0}1{2}{1}{4}{7}{6}{5}'.format(*byteUnit) for byteUnit in i[2::]]
         i[2::3] = ['{0}{7}{6}{5}{4}{3}{1}{2}'.format(*byteUnit) for byteUnit in i[2::3]]
-        i[3::4] = ['{0}{3}{2}{1}{7}{5}{6}{4}'.format(*byteUnit) for byteUnit in i[3::4]]
+        i[3::4] = ['{0}1{2}{1}{7}{5}{6}{4}'.format(*byteUnit) for byteUnit in i[3::4]]
     for i in dictionaryValues[messageLength::4]:
         i[1::] = ['{0}{1}{2}{3}{4}{5}{6}{7}'.format(*byteUnit) for byteUnit in i[1::]]
         i[2::] = ['{0}{4}{5}{3}{2}{5}{4}{7}'.format(*byteUnit) for byteUnit in i[2::]]
