@@ -179,6 +179,7 @@ def binaryConverter():
         finalHash = bin(finalHash)[2:].zfill(8)
         newHashedResult.append(finalHash)
 
+# Save the hash to a .txt file
 def recordHash(lastHash):
     global savedHash
     lastHash = ''.join(lastHash)
