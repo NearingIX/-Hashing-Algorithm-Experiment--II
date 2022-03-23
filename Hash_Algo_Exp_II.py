@@ -19,7 +19,6 @@ finalDictionary = {}
 finalHash = ''
 newHashedResult = []
 
-
 # Convert message to ASCII
 def createAsciiMessage():
     global asciiMessage, givenMessage, preOrdImage, asciiMessageTwo
