@@ -170,6 +170,7 @@ def reOrderHash():
         finalHash = [finalHash[i] for i in reIndexHash]
         finalHash = finalHash[::-1]
 
+# Convert the finalHash back to binary to mutate it again
 def binaryConverter():
     global finalHash
     finalHash = newHashedResult
